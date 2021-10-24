@@ -47,7 +47,6 @@ class Menu(QMainWindow):
         self.snippingTool = SnippingTool.SnippingWidget()
         self.setGeometry(*start_position)
 
-        # From the second initialization, both arguments will be valid
         if numpy_image is not None and snip_number is not None:
             self.image = self.convert_numpy_img_to_qpixmap(numpy_image)
             self.change_and_set_title("Bangla OCR Snipping Tool")
@@ -58,7 +57,7 @@ class Menu(QMainWindow):
         self.resize(self.image.width(), self.image.height() + self.toolbar.height())
         self.show()
 
-    # snippingTool.start() will open a new window, so if this is the first snip, close the first window.
+    
     def new_snip_window(self):
         self.total_snips += 1
         self.snippingTool.start()
@@ -87,7 +86,6 @@ class Menu(QMainWindow):
         if event.button == Qt.LeftButton:
             self.drawing = False
 
-    # TODO exit application when we exit all windows
     def closeEvent(self, event):
         event.accept()
 
