@@ -11,7 +11,6 @@ import SnippingTool
 class Menu(QMainWindow):
     default_title = "Bangla OCR Snipping Tool"
 
-    # numpy_image is the desired image we want to display given as a numpy array.
     def __init__(self, numpy_image=None, snip_number=None, start_position=(1200, 600, 150, 50)):
         super().__init__()
 
